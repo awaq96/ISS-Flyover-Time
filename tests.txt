@@ -1,0 +1,32 @@
+x Canary Test
+
+x get_list_of_times_for_locations for an empty list of locations returns an empty list.
+x get_list_of_times_for_locations for a list with one location returns time for that location.
+
+
+x get_list_of_times_for_locations for a list with two locations returns time for two locations.
+
+x get_list_of_times_for_locations for a list with three locations returns time for three locations.
+
+x get_list_of_times_for_locations for a list with three location returns time for two locations and an error message when the request for the second location fails with an "invalid location" exception.
+
+x get_list_of_times_for_locations for a list with three location returns time for two locations and an error message when the request for the third location fails with a "network error" exception.
+
+
+
+Functions to talk to the real service:
+x get_raw_response takes a location and returns response from the URL where the response contains "passes", "latitude", and "longitude"
+xparse_json for a sample data returns proper time extracted from the sample as string
+xparse_json for another sample data returns proper time extracted from that sample as string
+- get_flyover_time takes a location and calls get_raw_response and passes the response to parse_json and returns response from parse_json
+
+-get_flyover_time throws the exception thrown by get_raw_response
+-get_flyover_time throws the exception thrown by parse_json
+
+-...test to design the code for getting the astronaut names... list these tests out here and then implement them
+x get_number_of_astronauts_on_iss returns the number of astronauts on iss
+x get_names_of_astronauts_on_iss returns the names of the astronauts on iss
+
+x Let's design a ui (not a GUI) program that will read a list of lat and lon from a file and display the relevant information on the console.
+Let's create a run task to run the UI easily from the build file. Let the build file pass the file name as an argument to the program.
+Remember to exclude the UI code from coverage.
